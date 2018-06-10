@@ -9,13 +9,13 @@ description: 乱七八糟的一切事物
 keywords:
 author: Zhang
 language: zh_CN
-timezone: UTF+8
+timezone: PRC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year-:month-:day-:title/
 permalink_defaults:
 
 # Directory
@@ -81,3 +81,14 @@ deploy:
   type: git
   repo: https://github.com/zhangyunhai210/zhangyunhai210.github.io.git
   branch: master
+
+# Feed
+##hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
