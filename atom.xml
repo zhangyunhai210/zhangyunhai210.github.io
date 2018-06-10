@@ -38,4 +38,36 @@
     
   </entry>
   
+  <entry>
+    <title>跨域解决方案</title>
+    <link href="http://yoursite.com/2018-06-09-%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2018-06-09-跨域解决方案/</id>
+    <published>2018-06-09T19:11:57.000Z</published>
+    <updated>2018-06-10T10:14:37.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#&lt;strong&gt;跨域资源共享(CORS)&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##&lt;strong&gt;概述&lt;/strong&gt;&lt;br&gt;&lt;code&gt;CORS（Cross-Origin Resource
+        
+      
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
 </feed>
