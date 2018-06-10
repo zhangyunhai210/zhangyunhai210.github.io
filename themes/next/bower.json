@@ -29,7 +29,7 @@
     "velocity": "~1.2.1",
     "jquery": "http://code.jquery.com/jquery-2.1.3.min.js",
     "fastclick": "~1.0.6",
-    "font-awesome": "fontawesome#*",
+    "font-awesome": "fontawesome# *",
     "jquery_lazyload": "jquery.lazyload#~1.9.7",
     "ua-parser-js": "~0.7.9",
     "Han": "^3.3.0"
