@@ -1,7 +1,7 @@
 #! /bin/zsh
 DATE=`date +"%Y-%m-%d"`
 
-echo -e "Start git,please wait....\033[0m\n"
+echo -e "\033[32m---------->>> Start git,please wait....\033[0m\n"
 git add .
 echo -e "\033[32m---------->>> add end...\033[0m\n"
 git commit -m "${DATE}"
