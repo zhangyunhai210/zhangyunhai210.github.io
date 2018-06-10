@@ -1,16 +1,24 @@
 #! /bin/zsh
 DATE=`date +"%Y-%m-%d"`
 
-echo "Start git,please wait...."
+echo -e "Start git,please wait....\033[0m\n"
 git add .
-echo "add end..."
+echo -e "\033[32m---------->>> add end...\033[0m\n"
 git commit -m "${DATE}"
-echo "commit end..."
+echo -e "\033[32m---------->>> commit end...\033[0m\n"
 git push origin hexo
 if [ $? -eq 0 ];then
     echo -e "\033[32m---------->>>  push succeed ！！！\033[0m\n"
 else
     echo -e "\033[32m---------->>>  push failed  ！！！\033[0m\n"
 fi
-echo "push end"
-echo "______________________"
+echo -e "\033[32m---------->>> push end\033[0m\n"
+echo -e "\033[32m----------------------------------------------------\033[0m\n"
+hexo g -d
+if[ $? -eq 0 ];then
+    echo -e "\033[32m---------->>> hexo push succeed !!!\033[0m\n"
+else
+    echo -e "\033[32m---------->>> hexo push failed !!!\033[0m\n"
+fi
+echo -e "\033[32m---------->>> hexo end\033[0m\n"
+echo -e "\033[32m----------------------------------------------------\033[0m\n"
