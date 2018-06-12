@@ -68,10 +68,12 @@
 
 
 
-  <meta name="keywords" content="web,http,js,跨域," />
+  <meta name="keywords" content="web,js,http,跨域," />
 
 
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="钓鱼小屋" type="application/atom+xml" />
@@ -81,18 +83,18 @@
 
 
 
-<meta name="description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    var">
-<meta name="keywords" content="web,http,js,跨域">
+<meta name="description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。">
+<meta name="keywords" content="web,js,http,跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨域解决方案">
 <meta property="og:url" content="http://yoursite.com/2018-06-09-跨域解决方案/index.html">
 <meta property="og:site_name" content="钓鱼小屋">
-<meta property="og:description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    var">
+<meta property="og:description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T10:21:05.325Z">
+<meta property="og:updated_time" content="2018-06-12T12:17:19.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域解决方案">
-<meta name="twitter:description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。12345&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;    var">
+<meta name="twitter:description" content="跨域资源共享(CORS) 概述CORS（Cross-Origin Resource Sharing跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。">
 
 
 
@@ -278,6 +280,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-06-09-跨域解决方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018-06-09-跨域解决方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -303,7 +316,7 @@
 
       
         <h1 id="跨域资源共享-CORS"><a href="#跨域资源共享-CORS" class="headerlink" title="跨域资源共享(CORS)"></a>跨域资源共享(CORS)</h1><hr>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><p><code>CORS（Cross-Origin Resource Sharing</code>跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<code>CORS</code>背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&quot;￼GET&quot;, &quot;/trigkit4&quot;,true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><p><code>CORS（Cross-Origin Resource Sharing</code>跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。<code>CORS</code>背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&quot;￼GET&quot;, &quot;/trigkit4&quot;,true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>以上的trigkit4是相对路径，如果我们要使用CORS，相关Ajax代码可能如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&quot;￼GET&quot;, &quot;http://segmentfault.com/u/trigkit4/&quot;,true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>代码与之前的区别就在于相对路径换成了其他域的绝对路径，也就是你要跨域访问的接口地址。<br><br><br>服务器端对于CORS的支持，主要就是通过设置<code>Access-Control-Allow-Origin</code>来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。</p>
 <h2 id="CORS简介"><a href="#CORS简介" class="headerlink" title="CORS简介"></a><strong>CORS简介</strong></h2><hr>
@@ -745,9 +758,9 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
           
             <a href="/tags/web/" rel="tag"># web</a>
           
-            <a href="/tags/http/" rel="tag"># http</a>
-          
             <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
           
             <a href="/tags/跨域/" rel="tag"># 跨域</a>
           
@@ -768,8 +781,8 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018-06-09-hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2018-06-11-js原型链初解/" rel="prev" title="js原型链初解">
+                js原型链初解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -798,6 +811,16 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -860,7 +883,7 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1090,6 +1113,26 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
 
   
 
+    
+      <script id="dsq-count-scr" src="https://zhangyunhai210.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018-06-09-跨域解决方案/';
+          this.page.identifier = '2018-06-09-跨域解决方案/';
+          this.page.title = '跨域解决方案';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangyunhai210.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -1102,10 +1145,6 @@ socket.listen(server).on(&apos;connection&apos;, function(client) {
   
 
 
-
-
-
-  
 
 
 
