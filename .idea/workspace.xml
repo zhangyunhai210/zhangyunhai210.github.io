@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="652">
-              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
             </state>
           </provider>
         </entry>
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="367" lean-forward="true" selection-start-line="367" selection-end-line="367" />
+              <caret line="367" selection-start-line="367" selection-end-line="367" />
             </state>
           </provider>
         </entry>
@@ -58,12 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="跨域解决方案.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="跨域解决方案.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/跨域解决方案.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <first_editor relative-caret-position="60">
+                <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jsonp詳解.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/jsonp詳解.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="360">
+                <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
               </first_editor>
               <second_editor />
             </state>
@@ -161,6 +173,7 @@
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/_posts/js原型链初解.md" />
         <option value="$PROJECT_DIR$/source/_posts/跨域解决方案.md" />
+        <option value="$PROJECT_DIR$/source/_posts/jsonp詳解.md" />
       </list>
     </option>
   </component>
@@ -281,12 +294,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528606538282</updated>
       <workItem from="1528606541027" duration="17668000" />
-      <workItem from="1528803479332" duration="2343000" />
+      <workItem from="1528803479332" duration="2545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20011000" />
+    <option name="totallyTimeSpent" value="20213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,7 +322,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969698" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.50090414" side_tool="true" weight="0.2522267" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.1430303" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.14197531" />
       <window_info id="Favorites" order="2" sideWeight="0.50090414" side_tool="true" weight="0.2522267" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -575,14 +588,14 @@
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="367" lean-forward="true" selection-start-line="367" selection-end-line="367" />
+          <caret line="367" selection-start-line="367" selection-end-line="367" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
@@ -599,8 +612,18 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/跨域解决方案.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <first_editor relative-caret-position="60">
+            <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/jsonp詳解.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
           </first_editor>
           <second_editor />
         </state>
