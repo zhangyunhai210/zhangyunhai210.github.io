@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-12T12:16:51.634Z</updated>
+  <updated>2018-06-13T12:53:44.143Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsonp詳解</title>
+    <link href="http://yoursite.com/2018-06-12-jsonp%E8%A9%B3%E8%A7%A3/"/>
+    <id>http://yoursite.com/2018-06-12-jsonp詳解/</id>
+    <published>2018-06-12T21:52:43.000Z</published>
+    <updated>2018-06-13T12:53:44.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
+    
+  </entry>
   
   <entry>
     <title>js原型链初解</title>
