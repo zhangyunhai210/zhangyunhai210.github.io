@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-13T12:53:44.143Z</updated>
+  <updated>2018-06-14T13:43:51.763Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AJAX</title>
+    <link href="http://yoursite.com/2018-06-13-AJAX/"/>
+    <id>http://yoursite.com/2018-06-13-AJAX/</id>
+    <published>2018-06-13T22:32:57.000Z</published>
+    <updated>2018-06-14T13:43:51.763Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;a href=&quot;#AJAX和XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;/a&gt;&lt;strong&gt;AJAX和XMLHttpRequest&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
+    
+      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
     <title>jsonp詳解</title>
     <link href="http://yoursite.com/2018-06-12-jsonp%E8%A9%B3%E8%A7%A3/"/>
     <id>http://yoursite.com/2018-06-12-jsonp詳解/</id>
     <published>2018-06-12T21:52:43.000Z</published>
-    <updated>2018-06-13T12:53:44.143Z</updated>
+    <updated>2018-06-14T13:32:15.121Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;总而言之，jsonp不是ajax的一个特例，哪怕jquery等巨头把jsonp封装进了ajax，也不能改变着一点！&lt;br&gt;
     
     </summary>
     

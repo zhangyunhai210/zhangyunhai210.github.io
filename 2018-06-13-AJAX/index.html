@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web,js,http,跨域,AJAX,ajax," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钓鱼小屋" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="AJAX和XMLHttpRequest ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，XMLHttpRequest">
+<meta name="keywords" content="web,js,http,跨域,AJAX,ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX">
+<meta property="og:url" content="http://yoursite.com/2018-06-13-AJAX/index.html">
+<meta property="og:site_name" content="钓鱼小屋">
+<meta property="og:description" content="AJAX和XMLHttpRequest ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，XMLHttpRequest">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-14T13:43:51.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AJAX">
+<meta name="twitter:description" content="AJAX和XMLHttpRequest ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，XMLHttpRequest">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018-06-13-AJAX/"/>
+
+
+
+
+
+  <title>AJAX | 钓鱼小屋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钓鱼小屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个萌豚的自我修养</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018-06-13-AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钓鱼小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AJAX</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T06:32:57+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-06-13-AJAX/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018-06-13-AJAX/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="AJAX和XMLHttpRequest"><a href="#AJAX和XMLHttpRequest" class="headerlink" title="AJAX和XMLHttpRequest"></a><strong>AJAX和XMLHttpRequest</strong></h1><hr>
+<p>ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，<code>XMLHttpRequest</code><br><a id="more"></a><br><code>XMLHttpRequest</code>是一个提供在客户端的情况下客户端和服务器之间传输数据的API.它提供了一个通过URL来获取数据的简单方式,并且不会使整个页面刷新</p>
+<p><div id="flowchart-0" class="flow-chart"></div><br>尽管名字里有XML,但<code>XMLHTTPRequest</code>可以取回所以类型的数据资源,并不仅限于XML.而且除了HTTP,它还支持<code>file</code>和<code>ftp</code>协议</p>
+<hr>
+<h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a><strong>XMLHttpRequest</strong></h2><hr>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h3><p><code>XMLHttpRequest()</code><br>    构造函数初始化了一个<code>XMLHTTPRequest</code>对象.必须在所以其他方法调用前调用构造函数</p>
+<hr>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a><strong>属性</strong></h3><p>此接口继承了<code>XMLHTTPRequestEventTarget</code>和<code>EventTarget</code>的属性</p>
+<p><table><br>   <tr><br>      <td>属性</td><br>      <td>类型</td><br>      <td>描述</td><br>   </tr><br>   <tr><br>      <td>onreadystatechange</td><br>      <td>Function</td><br>      <td>一个js函数对象,当readyState属性该表是会调用它.回调函数会在user interface线程中调用(一般用于判断没阶段的回调函数)</td><br>   </tr><br>   <tr><br>      <td>readyState</td><br>      <td>unsigned short</td><br>      <td>表示请求的五种状态<br>        <table><br>            <tr><br>                <td>值</td><td>状态</td><td>描述</td><br>            </tr><br>            <tr><br>                <td><br>                0<br>                </td><br>                <td><br>                UNSENT (未打开)<br>                </td><br>                <td><br>                open()方法还未被调用.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                1<br>                </td><br>                <td><br>                OPEND<br>                </td><br>                <td><br>                open()方法已经被调用.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                2<br>                </td><br>                <td><br>                HEADERS_RECEIVED (已获取响应头)<br>                </td><br>                <td><br>                send()方法已经被调用, 响应头和响应状态已经返回.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                3<br>                </td><br>                <td><br>                LOADING (正在下载响应体)<br>                </td><br>                <td><br>                响应体下载中; responseText中已经获取了部分数据.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                4<br>                </td><br>                <td><br>                DONE (请求完成)<br>                </td><br>                <td><br>                整个请求过程已经完毕.<br>                </td><br>            </tr><br>        </table><br>      </td><br>            </tr><tr><br>                <td><br>                response<br>                </td><br>                <td><br>                    varies<br>                </td><br>                <td><br>                响应实体的类型由 responseType 来指定， 可以是 ArrayBuffer， Blob， Document， JavaScript 对象 (即 “json”)， 或者是字符串。如果请求未完成或失败，则该值为 null。<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                responseText<br>                </td><br>                <td><br>                DOMString<br>                </td><br>                <td><br>                此次请求的响应为文本，或是当请求未成功或还未发送时为 null。只读。<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                responseType<br>                </td><br>                <td><br>                XMLHttpRequestResponseType<br>                </td><br>                <td><br>                设置该值能够改变响应类型。就是告诉服务器你期望的响应格式。<br>                “” (空字符串)    字符串(默认值);<br>                “arraybuffer”    ArrayBuffer;<br>                “blob”    Blob;<br>                “document”    Document;<br>                “json”    JavaScript 对象，解析自服务器传递回来的JSON 字符串。;<br>                “text”    字符串;<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                responseXML<br>                </td><br>                <td><br>                Document<br>                </td><br>                <td><br>                本次请求的响应是一个 Document 对象，如果是以下情况则值为 null：请求未成功，请求未发送，或响应无法被解析成 XML 或 HTML。当响应为text/xml 流时会被解析。当 responseType 设置为”document”，并且请求为异步的，则响应会被当做 text/html 流来解析。只读.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                status<br>                </td><br>                <td><br>                unsigned short<br>                </td><br>                <td><br>                该请求的响应状态码 (例如, 状态码200 表示一个成功的请求).只读.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                statusText<br>                </td><br>                <td><br>                DOMString<br>                </td><br>                <td><br>                该请求的响应状态信息,包含一个状态码和原因短语 (例如 “200 OK”). 只读.<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                upload<br>                </td><br>                <td><br>                XMLHttpRequestUpload<br>                </td><br>                <td><br>                可以在 upload 上添加一个事件监听来跟踪上传过程。<br>                </td><br>            </tr><br>            <tr><br>                <td><br>                withCredentials<br>                </td><br>                <td><br>                boolean<br>                </td><br>                <td><br>                表明在进行跨站(cross-site)的访问控制(Access-Control)请求时，是否使用认证信息(例如cookie或授权的header)。 默认为 false。<br>                </td><br>            </tr><br>   </table></p>
+<p></p>
+<hr>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h3><p><span style="background-color:#333;color:#fff;">abort()</span><br>如果请求已经被发送,则立刻中止请求<br><span style="background-color:#333;color:#fff;">getAllResponseHeaders()</span><br><code>DOMString getAllResponseHeaders()</code><br>返回所有响应头信息(响应头名和值), 如果响应头还没接受,则返回null.<br><span style="background-color:#333;color:#fff;">getResponseHeader()</span><br><code>DOMString? getResponseHeader(DOMString header);</code><br>返回指定的响应头的值, 如果响应头还没被接受,或该响应头不存在,则返回null.<br><span style="background-color:#333;color:#fff;">open()</span><br>初始化一个请求. 该方法用于JavaScript代码中;如果是本地代码, 使用 openRequest()方法代替.</p>
+<p style="color:red">注意: 在一个已经激活的request下（已经调用open()或者openRequest()方法的request）再次调用这个方法相当于调用了abort（）方法。</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void open(</span><br><span class="line">   DOMString method,</span><br><span class="line">   DOMString url,</span><br><span class="line">   optional boolean async,</span><br><span class="line">   optional DOMString user,</span><br><span class="line">   optional DOMString password</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>参数<br><code>method</code><br>请求所使用的HTTP方法; 例如 “GET”, “POST”, “PUT”, “DELETE”等. 如果下个参数是非HTTP(S)的URL,则忽略该参数.<br><code>url</code><br>该请求所要访问的URL<br><code>async</code><br>一个可选的布尔值参数，默认为true,意味着是否执行异步操作，如果值为false,则send()方法不会返回任何东西，直到接受到了服务器的返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。这个值必须是true,如果multipart 属性是true，否则将会出现一个意外。<br><code>user</code><br>用户名,可选参数,为授权使用;默认参数为空string.<br><code>password</code><br>密码,可选参数,为授权使用;默认参数为空string.<br><span style="background-color:#333;color:#fff;">overrideMimeType()</span><br>重写由服务器返回的MIME type。这个可用于, 例如，强制把一个响应流当作“text/xml”来处理和解析,即使服务器没有指明数据是这个类型。注意，这个方法必须在send()之前被调用。<br><code>void overrideMimeType(DOMString mimetype);</code><br><span style="background-color:#333;color:#fff;">send()</span><br>发送请求. 如果该请求是异步模式(默认),该方法会立刻返回. 相反,如果请求是同步模式,则直到请求的响应完全接受以后,该方法才会返回.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void send();</span><br><span class="line">void send(ArrayBuffer data);</span><br><span class="line">void send(Blob data);</span><br><span class="line">void send(Document data);</span><br><span class="line">void send(DOMString? data);</span><br><span class="line">void send(FormData data);</span><br></pre></td></tr></table></figure></p>
+<p><span style="background-color:#333;color:#fff;">setRequestHeader()</span><br>给指定的HTTP请求头赋值.在这之前,你必须确认已经调用 open() 方法打开了一个url.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void setRequestHeader(</span><br><span class="line">   DOMString header,</span><br><span class="line">   DOMString value</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>参数<br><code>header</code><br>将要被赋值的请求头名称.<br><code>value</code><br>给指定的请求头赋的值.</p>
+<h3 id="原生AJAX方式"><a href="#原生AJAX方式" class="headerlink" title="原生AJAX方式"></a><strong>原生AJAX方式</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let xmlHttp = new XMLHttpRequest();</span><br><span class="line">//GET</span><br><span class="line">function doGet(url)&#123;//注意在传参数值的时候最好使用encodeURI处理一下，防止乱码</span><br><span class="line">	createxmlHttpRequest();</span><br><span class="line">	xmlHttp.open(&quot;GET&quot;,url);</span><br><span class="line">	xmlHttp.send(null);</span><br><span class="line">	xmlHttp.onreadystatechange=function()&#123;</span><br><span class="line">		if(xmlHttp.readyState==4&amp;&amp;xmlHttp.status==200)&#123;</span><br><span class="line">			alert(&apos;success&apos;);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			alert(&apos;fail&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//post</span><br><span class="line">function doPost(url,data)&#123;//注意在传参数值的时候最好使用encodeURI处理一下，防止乱码</span><br><span class="line">	createxmlHttpRequest();</span><br><span class="line">	xmlHttp.open(&quot;POST&quot;,url);</span><br><span class="line">	xmlHttp.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">	xmlHttp.send(data);</span><br><span class="line">	xmlHttp.onreadystatechange=function()&#123;</span><br><span class="line">		if(xmlHttp.readyState==4&amp;&amp;xmlHttp.status==200)&#123;</span><br><span class="line">			alert(&apos;success&apos;);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			alert(&apos;fail&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="AJAX实现原理"><a href="#AJAX实现原理" class="headerlink" title="AJAX实现原理"></a><strong>AJAX实现原理</strong></h2><p>大概的原理分为以下3步</p>
+<ol>
+<li>新建XMLHttpRequest对象,<code>var xhr = new XMLHttpRequest()</code></li>
+<li>通信需要一个回调函数,这个函数可以通过<code>xhr.onreadystatechange = callback;</code>来进行回调.对方的回信状态(200,404等)存储在<code>xhr.responseText</code>.当通信状态<code>xhr.readyState === 4</code>的时候,<code>xhr.responseText</code>数据就是完整的了.</li>
+<li>收到回信,进行相应的dom操作,实现局部刷新<br><br><br>可以看到,可以看到，其实一个ajax的请求，是很简单简洁的，只要开发者提供，method（get还是post）,data(要传递的数据，ajax本身是用来通信的嘛)，url(通信的对象)，callback(收到回信后的处理)就可以完成一次通信，别的地方是重复性的劳动，不必每次都繁琐的写一遍。所以我建了一个类，提供send方法，实现信息的发送（ajax重复性的工作），上述四个数据存储在每个实例中，只要实例调用send方法，就会进行一次ajax通信。大概的代码思路是这样：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function Ajax(obj)&#123;</span><br><span class="line">  //根据obj对method,data,url等进行初始化</span><br><span class="line">&#125;;</span><br><span class="line">Ajax.prototype.send = function()&#123;</span><br><span class="line">  var xhr = null;  </span><br><span class="line">  // 实例化XMLHttpRequest对象 </span><br><span class="line">  if(window.XMLHttpRequest) &#123; </span><br><span class="line">   xhr = new XMLHttpRequest(); </span><br><span class="line">  &#125; else &#123; </span><br><span class="line">   // IE6及其以下版本 </span><br><span class="line">   xhr = new ActiveXObjcet(&apos;Microsoft.XMLHTTP&apos;); </span><br><span class="line">  &#125;;</span><br><span class="line">  xhr.onreadystatechange = function()&#123;//注册回调函数</span><br><span class="line">    if(xhr.readyState === 4)&#123;</span><br><span class="line">        if(xhr.status === 200)//请求成功</span><br><span class="line">            callback(xhr.responseText);</span><br><span class="line">        if(xhr.status === 404)//请求失败</span><br><span class="line">            error();</span><br><span class="line">     &#125;else&#123;</span><br><span class="line">        console.log(&quot;请求中&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if(method === &apos;get&apos;)&#123;//如果是get方法，需要把data中的数据转化作为url传递给服务器</span><br><span class="line">    xhr.open(method,url+&apos;?&apos;+data,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">  &#125;else if(method === &apos;post&apos;)&#123;//如果是post，需要在头中添加content-type说明</span><br><span class="line">      xhr.open(method,url,true);</span><br><span class="line">      xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded; charset=UTF-8&apos;);</span><br><span class="line">      xhr.send(JSON.stringify(data));//发送的数据需要转化成JSON格式</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">    console.log(&apos;不识别的方法:&apos;+method);</span><br><span class="line">    return fasle;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>有了这个类,只需要执行下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ajax = new Ajax(&#123;</span><br><span class="line">  method:&apos;get&apos;,//设置ajax方法</span><br><span class="line">  url:&apos;http://localhost:3000&apos;,//设置通讯地址</span><br><span class="line">  callback:function(res)&#123;//设置回调函数</span><br><span class="line">     alert(res)</span><br><span class="line">  &#125;,</span><br><span class="line">  error:function()&#123;console.log(&quot;失败&quot;)&#125;,</span><br><span class="line">  data: data//需要传递的数据</span><br><span class="line">&#125;)</span><br><span class="line">ajax.send();</span><br></pre></td></tr></table></figure></p>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">ev=>operation: EventTarget|past
+xe=>operation: XMLHttpRequestEventTarget
+xr=>operation: XMLHttpRequest
+
+xr(right)->xe(right)->ev</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+          
+            <a href="/tags/AJAX/" rel="tag"># AJAX</a>
+          
+            <a href="/tags/ajax/" rel="tag"># ajax</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-06-12-jsonp詳解/" rel="next" title="jsonp詳解">
+                <i class="fa fa-chevron-left"></i> jsonp詳解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhang</p>
+              <p class="site-description motion-element" itemprop="description">乱七八糟的一切事物</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangyunhai210" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhangyunhai210@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/black_codemove" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/1934210383" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1098345874" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AJAX和XMLHttpRequest"><span class="nav-number">1.</span> <span class="nav-text">AJAX和XMLHttpRequest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#XMLHttpRequest"><span class="nav-number">1.1.</span> <span class="nav-text">XMLHttpRequest</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">1.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生AJAX方式"><span class="nav-number">1.1.4.</span> <span class="nav-text">原生AJAX方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX实现原理"><span class="nav-number">1.2.</span> <span class="nav-text">AJAX实现原理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://zhangyunhai210.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018-06-13-AJAX/';
+          this.page.identifier = '2018-06-13-AJAX/';
+          this.page.title = 'AJAX';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangyunhai210.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
