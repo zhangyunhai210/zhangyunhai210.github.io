@@ -62,20 +62,32 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/跨域解决方案.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="60">
-                <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="4" />
+              <first_editor relative-caret-position="225">
+                <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jsonp詳解.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jsonp詳解.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/jsonp詳解.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="360">
-                <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+              <first_editor relative-caret-position="60">
+                <caret line="4" selection-start-line="4" selection-end-line="8" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AJAX.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/AJAX.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="135">
+                <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -111,18 +123,18 @@
       <find>language:</find>
       <find>header</find>
       <find>基</find>
-      <find>#*</find>
       <find>v</find>
       <find>var</find>
       <find>language</find>
       <find>proto</find>
+      <find>duoshuo</find>
       <find>__proto__</find>
       <find>config</find>
-      <find>duoshuo</find>
+      <find>#*</find>
     </findStrings>
     <replaceStrings>
-      <replace># *</replace>
       <replace>let</replace>
+      <replace># *</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -174,6 +186,7 @@
         <option value="$PROJECT_DIR$/source/_posts/js原型链初解.md" />
         <option value="$PROJECT_DIR$/source/_posts/跨域解决方案.md" />
         <option value="$PROJECT_DIR$/source/_posts/jsonp詳解.md" />
+        <option value="$PROJECT_DIR$/source/_posts/AJAX.md" />
       </list>
     </option>
   </component>
@@ -294,12 +307,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528606538282</updated>
       <workItem from="1528606541027" duration="17668000" />
-      <workItem from="1528803479332" duration="2545000" />
+      <workItem from="1528803479332" duration="3459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20213000" />
+    <option name="totallyTimeSpent" value="21127000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,7 +327,7 @@
     <frame x="67" y="25" width="2493" height="958" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.2522267" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.2522267" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32893157" />
@@ -322,7 +335,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969698" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.50090414" side_tool="true" weight="0.2522267" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.14197531" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2617284" />
       <window_info id="Favorites" order="2" sideWeight="0.50090414" side_tool="true" weight="0.2522267" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -599,6 +612,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/跨域解决方案.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/js原型链初解.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -609,21 +632,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/跨域解决方案.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/jsonp詳解.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="60">
-            <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="4" />
+            <caret line="4" selection-start-line="4" selection-end-line="8" selection-end-column="7" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/jsonp詳解.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/AJAX.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
