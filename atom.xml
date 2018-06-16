@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-16T10:39:29.351Z</updated>
+  <updated>2018-06-16T11:37:00.990Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2018-06-13-AJAX/"/>
     <id>http://yoursite.com/2018-06-13-AJAX/</id>
     <published>2018-06-13T22:32:57.000Z</published>
-    <updated>2018-06-16T10:39:29.351Z</updated>
+    <updated>2018-06-16T11:37:00.990Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;a href=&quot;#AJAX和XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;/a&gt;&lt;strong&gt;AJAX和XMLHttpRequest&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;&lt;br&gt;
+&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;
     
     </summary>
     
@@ -55,7 +55,7 @@
     <summary type="html">
     
       &lt;h1 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;总而言之，jsonp不是ajax的一个特例，哪怕jquery等巨头把jsonp封装进了ajax，也不能改变着一点！&lt;br&gt;
+&lt;p&gt;总而言之，jsonp不是ajax的一个特例，哪怕jquery等巨头把jsonp封装进了ajax，也不能改变着一点！
     
     </summary>
     
@@ -81,7 +81,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;摘自JavaScript高级程序设计&quot;&gt;&lt;a href=&quot;#摘自JavaScript高级程序设计&quot; class=&quot;headerlink&quot; title=&quot;摘自JavaScript高级程序设计&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘自JavaScript高级程序设计&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;继承是OO语言中的一个最为人津津乐道的概念.许多OO语言都支持两种继承方式: 接口继承 和 实现继承 .接口继承只继承方法签名,而实现继承则继承实际的方法.由于js中方法没有签名,在ECMAScript中无法实现接口继承.ECMAScript只支持实现继承,而且其&lt;code&gt;实现继承&lt;/code&gt;主要是依靠原型链来实现的.&lt;br&gt;
+      &lt;h1 id=&quot;摘自JavaScript高级程序设计&quot;&gt;&lt;a href=&quot;#摘自JavaScript高级程序设计&quot; class=&quot;headerlink&quot; title=&quot;摘自JavaScript高级程序设计&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘自JavaScript高级程序设计&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;继承是OO语言中的一个最为人津津乐道的概念.许多OO语言都支持两种继承方式: 接口继承 和 实现继承 .接口继承只继承方法签名,而实现继承则继承实际的方法.由于js中方法没有签名,在ECMAScript中无法实现接口继承.ECMAScript只支持实现继承,而且其&lt;code&gt;实现继承&lt;/code&gt;主要是依靠原型链来实现的.
     
     </summary>
     
@@ -104,7 +104,7 @@
     <summary type="html">
     
       &lt;h1 id=&quot;跨域资源共享-CORS&quot;&gt;&lt;a href=&quot;#跨域资源共享-CORS&quot; class=&quot;headerlink&quot; title=&quot;跨域资源共享(CORS)&quot;&gt;&lt;/a&gt;跨域资源共享(CORS)&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;&lt;strong&gt;概述&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;CORS（Cross-Origin Resource Sharing&lt;/code&gt;跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。&lt;code&gt;CORS&lt;/code&gt;背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。&lt;br&gt;
+&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;&lt;strong&gt;概述&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;CORS（Cross-Origin Resource Sharing&lt;/code&gt;跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。&lt;code&gt;CORS&lt;/code&gt;背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
     
     </summary>
     
