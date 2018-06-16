@@ -33,7 +33,6 @@ ___
 ___
 ### **属性**
 此接口继承了`XMLHTTPRequestEventTarget`和`EventTarget`的属性
-
 <table>
    <tr>
       <td>属性</td>
