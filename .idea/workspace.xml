@@ -32,8 +32,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="111" column="17" lean-forward="true" selection-start-line="111" selection-start-column="17" selection-end-line="135" selection-end-column="15" />
+            <state relative-caret-position="440">
+              <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -276,12 +276,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528606538282</updated>
       <workItem from="1528606541027" duration="17668000" />
-      <workItem from="1528803479332" duration="8179000" />
+      <workItem from="1528803479332" duration="8435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25847000" />
+    <option name="totallyTimeSpent" value="26103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -294,7 +294,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="958" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49909583" visible="true" weight="0.2522267" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
@@ -637,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="111" column="17" lean-forward="true" selection-start-line="111" selection-start-column="17" selection-end-line="135" selection-end-column="15" />
+        <state relative-caret-position="440">
+          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
         </state>
       </provider>
     </entry>
