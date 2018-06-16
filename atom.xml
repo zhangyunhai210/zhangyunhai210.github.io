@@ -26,16 +26,16 @@
     <summary type="html">
     
       &lt;h1 id=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;a href=&quot;#AJAX和XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;/a&gt;&lt;strong&gt;AJAX和XMLHttpRequest&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;
+&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;&lt;br&gt;
     
     </summary>
     
     
       <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
       <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
@@ -62,9 +62,9 @@
     
       <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
       <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
@@ -111,9 +111,9 @@
     
       <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
       <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
