@@ -83,7 +83,7 @@
 <meta property="og:site_name" content="钓鱼小屋">
 <meta property="og:description" content="AJAX和XMLHttpRequest ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，XMLHttpRequest">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T13:43:51.763Z">
+<meta property="og:updated_time" content="2018-06-16T10:39:29.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX">
 <meta name="twitter:description" content="AJAX和XMLHttpRequest ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，XMLHttpRequest">
@@ -1957,7 +1957,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #58f182;
+  background: #4b7d2d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2969,33 +2969,237 @@ embed {
 
       
         <h1 id="AJAX和XMLHttpRequest"><a href="#AJAX和XMLHttpRequest" class="headerlink" title="AJAX和XMLHttpRequest"></a><strong>AJAX和XMLHttpRequest</strong></h1><hr>
-<p>ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，<code>XMLHttpRequest</code><br><a id="more"></a><br><code>XMLHttpRequest</code>是一个提供在客户端的情况下客户端和服务器之间传输数据的API.它提供了一个通过URL来获取数据的简单方式,并且不会使整个页面刷新</p>
-<p></p><div id="flowchart-0" class="flow-chart"></div><br>尽管名字里有XML,但<code>XMLHTTPRequest</code>可以取回所以类型的数据资源,并不仅限于XML.而且除了HTTP,它还支持<code>file</code>和<code>ftp</code>协议<p></p>
+<p>ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，<code>XMLHttpRequest</code>
+<a id="more"></a>
+<code>XMLHttpRequest</code>是一个提供在客户端的情况下客户端和服务器之间传输数据的API.它提供了一个通过URL来获取数据的简单方式,并且不会使整个页面刷新</p>
+<p></p><div id="flowchart-0" class="flow-chart"></div>
+尽管名字里有XML,但<code>XMLHTTPRequest</code>可以取回所以类型的数据资源,并不仅限于XML.而且除了HTTP,它还支持<code>file</code>和<code>ftp</code>协议<p></p>
 <hr>
 <h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a><strong>XMLHttpRequest</strong></h2><hr>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h3><p><code>XMLHttpRequest()</code><br>    构造函数初始化了一个<code>XMLHTTPRequest</code>对象.必须在所以其他方法调用前调用构造函数</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h3><p><code>XMLHttpRequest()</code>
+    构造函数初始化了一个<code>XMLHTTPRequest</code>对象.必须在所以其他方法调用前调用构造函数</p>
 <hr>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a><strong>属性</strong></h3><p>此接口继承了<code>XMLHTTPRequestEventTarget</code>和<code>EventTarget</code>的属性</p>
-<p></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><table>   <tbody><tr>      <td>属性</td>      <td>类型</td>      <td>描述</td>   </tr>   <tr>      <td>onreadystatechange</td>      <td>Function</td>      <td>一个js函数对象,当readyState属性该表是会调用它.回调函数会在user interface线程中调用(一般用于判断没阶段的回调函数)</td>   </tr>   <tr>      <td>readyState</td>      <td>unsigned short</td>      <td>表示请求的五种状态<br>        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><table>            <tbody><tr>                <td>值</td><td>状态</td><td>描述</td>            </tr>            <tr>                <td><br>                0<br>                </td>                <td><br>                UNSENT (未打开)<br>                </td>                <td><br>                open()方法还未被调用.<br>                </td>            </tr>            <tr>                <td><br>                1<br>                </td>                <td><br>                OPEND<br>                </td>                <td><br>                open()方法已经被调用.<br>                </td>            </tr>            <tr>                <td><br>                2<br>                </td>                <td><br>                HEADERS_RECEIVED (已获取响应头)<br>                </td>                <td><br>                send()方法已经被调用, 响应头和响应状态已经返回.<br>                </td>            </tr>            <tr>                <td><br>                3<br>                </td>                <td><br>                LOADING (正在下载响应体)<br>                </td>                <td><br>                响应体下载中; responseText中已经获取了部分数据.<br>                </td>            </tr>            <tr>                <td><br>                4<br>                </td>                <td><br>                DONE (请求完成)<br>                </td>                <td><br>                整个请求过程已经完毕.<br>                </td>            </tr>        </tbody></table><br>      </td>            </tr><tr>                <td><br>                response<br>                </td>                <td><br>                    varies<br>                </td>                <td><br>                响应实体的类型由 responseType 来指定， 可以是 ArrayBuffer， Blob， Document， JavaScript 对象 (即 “json”)， 或者是字符串。如果请求未完成或失败，则该值为 null。<br>                </td>            </tr>            <tr>                <td><br>                responseText<br>                </td>                <td><br>                DOMString<br>                </td>                <td><br>                此次请求的响应为文本，或是当请求未成功或还未发送时为 null。只读。<br>                </td>            </tr>            <tr>                <td><br>                responseType<br>                </td>                <td><br>                XMLHttpRequestResponseType<br>                </td>                <td><br>                设置该值能够改变响应类型。就是告诉服务器你期望的响应格式。<br>                “” (空字符串)    字符串(默认值);<br>                “arraybuffer”    ArrayBuffer;<br>                “blob”    Blob;<br>                “document”    Document;<br>                “json”    JavaScript 对象，解析自服务器传递回来的JSON 字符串。;<br>                “text”    字符串;<br>                </td>            </tr>            <tr>                <td><br>                responseXML<br>                </td>                <td><br>                Document<br>                </td>                <td><br>                本次请求的响应是一个 Document 对象，如果是以下情况则值为 null：请求未成功，请求未发送，或响应无法被解析成 XML 或 HTML。当响应为text/xml 流时会被解析。当 responseType 设置为”document”，并且请求为异步的，则响应会被当做 text/html 流来解析。只读.<br>                </td>            </tr>            <tr>                <td><br>                status<br>                </td>                <td><br>                unsigned short<br>                </td>                <td><br>                该请求的响应状态码 (例如, 状态码200 表示一个成功的请求).只读.<br>                </td>            </tr>            <tr>                <td><br>                statusText<br>                </td>                <td><br>                DOMString<br>                </td>                <td><br>                该请求的响应状态信息,包含一个状态码和原因短语 (例如 “200 OK”). 只读.<br>                </td>            </tr>            <tr>                <td><br>                upload<br>                </td>                <td><br>                XMLHttpRequestUpload<br>                </td>                <td><br>                可以在 upload 上添加一个事件监听来跟踪上传过程。<br>                </td>            </tr>            <tr>                <td><br>                withCredentials<br>                </td>                <td><br>                boolean<br>                </td>                <td><br>                表明在进行跨站(cross-site)的访问控制(Access-Control)请求时，是否使用认证信息(例如cookie或授权的header)。 默认为 false。<br>                </td>            </tr>   </tbody></table><p></p>
+<p></p><table>
+   <tbody><tr>
+      <td>属性</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>onreadystatechange</td>
+      <td>Function</td>
+      <td>一个js函数对象,当readyState属性该表是会调用它.回调函数会在user interface线程中调用(一般用于判断没阶段的回调函数)</td>
+   </tr>
+   <tr>
+      <td>readyState</td>
+      <td>unsigned short</td>
+      <td>表示请求的五种状态
+        <table>
+            <tbody><tr>
+                <td>值</td><td>状态</td><td>描述</td>
+            </tr>
+            <tr>
+                <td>
+                0
+                </td>
+                <td>
+                UNSENT (未打开)
+                </td>
+                <td>
+                open()方法还未被调用.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                1
+                </td>
+                <td>
+                OPEND
+                </td>
+                <td>
+                open()方法已经被调用.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                2
+                </td>
+                <td>
+                HEADERS_RECEIVED (已获取响应头)
+                </td>
+                <td>
+                send()方法已经被调用, 响应头和响应状态已经返回.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                3
+                </td>
+                <td>
+                LOADING (正在下载响应体)
+                </td>
+                <td>
+                响应体下载中; responseText中已经获取了部分数据.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                4
+                </td>
+                <td>
+                DONE (请求完成)
+                </td>
+                <td>
+                整个请求过程已经完毕.
+                </td>
+            </tr>
+        </tbody></table>
+      </td>
+            </tr><tr>
+                <td>
+                response
+                </td>
+                <td>
+                    varies
+                </td>
+                <td>
+                响应实体的类型由 responseType 来指定， 可以是 ArrayBuffer， Blob， Document， JavaScript 对象 (即 “json”)， 或者是字符串。如果请求未完成或失败，则该值为 null。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                responseText
+                </td>
+                <td>
+                DOMString
+                </td>
+                <td>
+                此次请求的响应为文本，或是当请求未成功或还未发送时为 null。只读。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                responseType
+                </td>
+                <td>
+                XMLHttpRequestResponseType
+                </td>
+                <td>
+                设置该值能够改变响应类型。就是告诉服务器你期望的响应格式。
+                “” (空字符串)    字符串(默认值);
+                “arraybuffer”    ArrayBuffer;
+                “blob”    Blob;
+                “document”    Document;
+                “json”    JavaScript 对象，解析自服务器传递回来的JSON 字符串。;
+                “text”    字符串;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                responseXML<br>                </td>
+                <td>
+                Document
+                </td>
+                <td>
+                本次请求的响应是一个 Document 对象，如果是以下情况则值为 null：请求未成功，请求未发送，或响应无法被解析成 XML 或 HTML。当响应为text/xml 流时会被解析。当 responseType 设置为”document”，并且请求为异步的，则响应会被当做 text/html 流来解析。只读.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                status
+                </td>
+                <td>
+                unsigned short<br>                </td>
+                <td>
+                该请求的响应状态码 (例如, 状态码200 表示一个成功的请求).只读.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                statusText
+                </td>
+                <td>
+                DOMString<br>                </td>
+                <td>
+                该请求的响应状态信息,包含一个状态码和原因短语 (例如 “200 OK”). 只读.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                upload
+                </td>
+                <td>
+                XMLHttpRequestUpload<br>                </td>
+                <td>
+                可以在 upload 上添加一个事件监听来跟踪上传过程。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                withCredentials
+                </td>
+                <td>
+                boolean
+                </td>
+                <td>
+                表明在进行跨站(cross-site)的访问控制(Access-Control)请求时，是否使用认证信息(例如cookie或授权的header)。 默认为 false。
+                </td>
+            </tr>
+   </tbody></table><p></p>
 <p></p>
 <hr>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h3><p><span style="background-color:#333;color:#fff;">abort()</span><br>如果请求已经被发送,则立刻中止请求<br><span style="background-color:#333;color:#fff;">getAllResponseHeaders()</span><br><code>DOMString getAllResponseHeaders()</code><br>返回所有响应头信息(响应头名和值), 如果响应头还没接受,则返回null.<br><span style="background-color:#333;color:#fff;">getResponseHeader()</span><br><code>DOMString? getResponseHeader(DOMString header);</code><br>返回指定的响应头的值, 如果响应头还没被接受,或该响应头不存在,则返回null.<br><span style="background-color:#333;color:#fff;">open()</span><br>初始化一个请求. 该方法用于JavaScript代码中;如果是本地代码, 使用 openRequest()方法代替.</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h3><p><span style="background-color:#333;color:#fff;">abort()</span>
+如果请求已经被发送,则立刻中止请求
+<span style="background-color:#333;color:#fff;">getAllResponseHeaders()</span>
+<code>DOMString getAllResponseHeaders()</code>
+返回所有响应头信息(响应头名和值), 如果响应头还没接受,则返回null. 
+<span style="background-color:#333;color:#fff;">getResponseHeader()</span>
+<code>DOMString? getResponseHeader(DOMString header);</code>
+返回指定的响应头的值, 如果响应头还没被接受,或该响应头不存在,则返回null.
+<span style="background-color:#333;color:#fff;">open()</span>
+初始化一个请求. 该方法用于JavaScript代码中;如果是本地代码, 使用 openRequest()方法代替.</p>
 <p style="color:red">注意: 在一个已经激活的request下（已经调用open()或者openRequest()方法的request）再次调用这个方法相当于调用了abort（）方法。</p>
 
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void open(</span><br><span class="line">   DOMString method,</span><br><span class="line">   DOMString url,</span><br><span class="line">   optional boolean async,</span><br><span class="line">   optional DOMString user,</span><br><span class="line">   optional DOMString password</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
-<p>参数<br><code>method</code><br>请求所使用的HTTP方法; 例如 “GET”, “POST”, “PUT”, “DELETE”等. 如果下个参数是非HTTP(S)的URL,则忽略该参数.<br><code>url</code><br>该请求所要访问的URL<br><code>async</code><br>一个可选的布尔值参数，默认为true,意味着是否执行异步操作，如果值为false,则send()方法不会返回任何东西，直到接受到了服务器的返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。这个值必须是true,如果multipart 属性是true，否则将会出现一个意外。<br><code>user</code><br>用户名,可选参数,为授权使用;默认参数为空string.<br><code>password</code><br>密码,可选参数,为授权使用;默认参数为空string.<br><span style="background-color:#333;color:#fff;">overrideMimeType()</span><br>重写由服务器返回的MIME type。这个可用于, 例如，强制把一个响应流当作“text/xml”来处理和解析,即使服务器没有指明数据是这个类型。注意，这个方法必须在send()之前被调用。<br><code>void overrideMimeType(DOMString mimetype);</code><br><span style="background-color:#333;color:#fff;">send()</span><br>发送请求. 如果该请求是异步模式(默认),该方法会立刻返回. 相反,如果请求是同步模式,则直到请求的响应完全接受以后,该方法才会返回.<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void send();</span><br><span class="line">void send(ArrayBuffer data);</span><br><span class="line">void send(Blob data);</span><br><span class="line">void send(Document data);</span><br><span class="line">void send(DOMString? data);</span><br><span class="line">void send(FormData data);</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p><span style="background-color:#333;color:#fff;">setRequestHeader()</span><br>给指定的HTTP请求头赋值.在这之前,你必须确认已经调用 open() 方法打开了一个url.<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void setRequestHeader(</span><br><span class="line">   DOMString header,</span><br><span class="line">   DOMString value</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>参数<br><code>header</code><br>将要被赋值的请求头名称.<br><code>value</code><br>给指定的请求头赋的值.</p>
+<p>参数
+<code>method</code>
+请求所使用的HTTP方法; 例如 “GET”, “POST”, “PUT”, “DELETE”等. 如果下个参数是非HTTP(S)的URL,则忽略该参数.
+<code>url</code>
+该请求所要访问的URL
+<code>async</code>
+一个可选的布尔值参数，默认为true,意味着是否执行异步操作，如果值为false,则send()方法不会返回任何东西，直到接受到了服务器的返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。这个值必须是true,如果multipart 属性是true，否则将会出现一个意外。
+<code>user</code>
+用户名,可选参数,为授权使用;默认参数为空string.
+<code>password</code>
+密码,可选参数,为授权使用;默认参数为空string.
+<span style="background-color:#333;color:#fff;">overrideMimeType()</span>
+重写由服务器返回的MIME type。这个可用于, 例如，强制把一个响应流当作“text/xml”来处理和解析,即使服务器没有指明数据是这个类型。注意，这个方法必须在send()之前被调用。
+<code>void overrideMimeType(DOMString mimetype);</code>
+<span style="background-color:#333;color:#fff;">send()</span>
+发送请求. 如果该请求是异步模式(默认),该方法会立刻返回. 相反,如果请求是同步模式,则直到请求的响应完全接受以后,该方法才会返回.
+</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void send();</span><br><span class="line">void send(ArrayBuffer data);</span><br><span class="line">void send(Blob data);</span><br><span class="line">void send(Document data);</span><br><span class="line">void send(DOMString? data);</span><br><span class="line">void send(FormData data);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><span style="background-color:#333;color:#fff;">setRequestHeader()</span>
+给指定的HTTP请求头赋值.在这之前,你必须确认已经调用 open() 方法打开了一个url.
+</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void setRequestHeader(</span><br><span class="line">   DOMString header,</span><br><span class="line">   DOMString value</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>参数
+<code>header</code>
+将要被赋值的请求头名称.
+<code>value</code>
+给指定的请求头赋的值.</p>
 <h3 id="原生AJAX方式"><a href="#原生AJAX方式" class="headerlink" title="原生AJAX方式"></a><strong>原生AJAX方式</strong></h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let xmlHttp = new XMLHttpRequest();</span><br><span class="line">//GET</span><br><span class="line">function doGet(url){//注意在传参数值的时候最好使用encodeURI处理一下，防止乱码</span><br><span class="line">	createxmlHttpRequest();</span><br><span class="line">	xmlHttp.open("GET",url);</span><br><span class="line">	xmlHttp.send(null);</span><br><span class="line">	xmlHttp.onreadystatechange=function(){</span><br><span class="line">		if(xmlHttp.readyState==4&amp;&amp;xmlHttp.status==200){</span><br><span class="line">			alert('success');</span><br><span class="line">		}else{</span><br><span class="line">			alert('fail');</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">//post</span><br><span class="line">function doPost(url,data){//注意在传参数值的时候最好使用encodeURI处理一下，防止乱码</span><br><span class="line">	createxmlHttpRequest();</span><br><span class="line">	xmlHttp.open("POST",url);</span><br><span class="line">	xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");</span><br><span class="line">	xmlHttp.send(data);</span><br><span class="line">	xmlHttp.onreadystatechange=function(){</span><br><span class="line">		if(xmlHttp.readyState==4&amp;&amp;xmlHttp.status==200){</span><br><span class="line">			alert('success');</span><br><span class="line">		}else{</span><br><span class="line">			alert('fail');</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <hr>
 <h2 id="AJAX实现原理"><a href="#AJAX实现原理" class="headerlink" title="AJAX实现原理"></a><strong>AJAX实现原理</strong></h2><p>大概的原理分为以下3步</p>
 <ol>
 <li>新建XMLHttpRequest对象,<code>var xhr = new XMLHttpRequest()</code></li>
 <li>通信需要一个回调函数,这个函数可以通过<code>xhr.onreadystatechange = callback;</code>来进行回调.对方的回信状态(200,404等)存储在<code>xhr.responseText</code>.当通信状态<code>xhr.readyState === 4</code>的时候,<code>xhr.responseText</code>数据就是完整的了.</li>
-<li>收到回信,进行相应的dom操作,实现局部刷新<br><br><br>可以看到,可以看到，其实一个ajax的请求，是很简单简洁的，只要开发者提供，method（get还是post）,data(要传递的数据，ajax本身是用来通信的嘛)，url(通信的对象)，callback(收到回信后的处理)就可以完成一次通信，别的地方是重复性的劳动，不必每次都繁琐的写一遍。所以我建了一个类，提供send方法，实现信息的发送（ajax重复性的工作），上述四个数据存储在每个实例中，只要实例调用send方法，就会进行一次ajax通信。大概的代码思路是这样：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function Ajax(obj){</span><br><span class="line">  //根据obj对method,data,url等进行初始化</span><br><span class="line">};</span><br><span class="line">Ajax.prototype.send = function(){</span><br><span class="line">  var xhr = null;  </span><br><span class="line">  // 实例化XMLHttpRequest对象 </span><br><span class="line">  if(window.XMLHttpRequest) { </span><br><span class="line">   xhr = new XMLHttpRequest(); </span><br><span class="line">  } else { </span><br><span class="line">   // IE6及其以下版本 </span><br><span class="line">   xhr = new ActiveXObjcet('Microsoft.XMLHTTP'); </span><br><span class="line">  };</span><br><span class="line">  xhr.onreadystatechange = function(){//注册回调函数</span><br><span class="line">    if(xhr.readyState === 4){</span><br><span class="line">        if(xhr.status === 200)//请求成功</span><br><span class="line">            callback(xhr.responseText);</span><br><span class="line">        if(xhr.status === 404)//请求失败</span><br><span class="line">            error();</span><br><span class="line">     }else{</span><br><span class="line">        console.log("请求中");</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  if(method === 'get'){//如果是get方法，需要把data中的数据转化作为url传递给服务器</span><br><span class="line">    xhr.open(method,url+'?'+data,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">  }else if(method === 'post'){//如果是post，需要在头中添加content-type说明</span><br><span class="line">      xhr.open(method,url,true);</span><br><span class="line">      xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');</span><br><span class="line">      xhr.send(JSON.stringify(data));//发送的数据需要转化成JSON格式</span><br><span class="line">  }else {</span><br><span class="line">    console.log('不识别的方法:'+method);</span><br><span class="line">    return fasle;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<li>收到回信,进行相应的dom操作,实现局部刷新
+<br>
+可以看到,可以看到，其实一个ajax的请求，是很简单简洁的，只要开发者提供，method（get还是post）,data(要传递的数据，ajax本身是用来通信的嘛)，url(通信的对象)，callback(收到回信后的处理)就可以完成一次通信，别的地方是重复性的劳动，不必每次都繁琐的写一遍。所以我建了一个类，提供send方法，实现信息的发送（ajax重复性的工作），上述四个数据存储在每个实例中，只要实例调用send方法，就会进行一次ajax通信。大概的代码思路是这样：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function Ajax(obj){</span><br><span class="line">  //根据obj对method,data,url等进行初始化</span><br><span class="line">};</span><br><span class="line">Ajax.prototype.send = function(){</span><br><span class="line">  var xhr = null;  </span><br><span class="line">  // 实例化XMLHttpRequest对象 </span><br><span class="line">  if(window.XMLHttpRequest) { </span><br><span class="line">   xhr = new XMLHttpRequest(); </span><br><span class="line">  } else { </span><br><span class="line">   // IE6及其以下版本 </span><br><span class="line">   xhr = new ActiveXObjcet('Microsoft.XMLHTTP'); </span><br><span class="line">  };</span><br><span class="line">  xhr.onreadystatechange = function(){//注册回调函数</span><br><span class="line">    if(xhr.readyState === 4){</span><br><span class="line">        if(xhr.status === 200)//请求成功</span><br><span class="line">            callback(xhr.responseText);</span><br><span class="line">        if(xhr.status === 404)//请求失败</span><br><span class="line">            error();</span><br><span class="line">     }else{</span><br><span class="line">        console.log("请求中");</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  if(method === 'get'){//如果是get方法，需要把data中的数据转化作为url传递给服务器</span><br><span class="line">    xhr.open(method,url+'?'+data,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">  }else if(method === 'post'){//如果是post，需要在头中添加content-type说明</span><br><span class="line">      xhr.open(method,url,true);</span><br><span class="line">      xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');</span><br><span class="line">      xhr.send(JSON.stringify(data));//发送的数据需要转化成JSON格式</span><br><span class="line">  }else {</span><br><span class="line">    console.log('不识别的方法:'+method);</span><br><span class="line">    return fasle;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ol>
-<p>有了这个类,只需要执行下面代码<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ajax = new Ajax({</span><br><span class="line">  method:'get',//设置ajax方法</span><br><span class="line">  url:'http://localhost:3000',//设置通讯地址</span><br><span class="line">  callback:function(res){//设置回调函数</span><br><span class="line">     alert(res)</span><br><span class="line">  },</span><br><span class="line">  error:function(){console.log("失败")},</span><br><span class="line">  data: data//需要传递的数据</span><br><span class="line">})</span><br><span class="line">ajax.send();</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>有了这个类,只需要执行下面代码
+</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ajax = new Ajax({</span><br><span class="line">  method:'get',//设置ajax方法</span><br><span class="line">  url:'http://localhost:3000',//设置通讯地址</span><br><span class="line">  callback:function(res){//设置回调函数</span><br><span class="line">     alert(res)</span><br><span class="line">  },</span><br><span class="line">  error:function(){console.log("失败")},</span><br><span class="line">  data: data//需要传递的数据</span><br><span class="line">})</span><br><span class="line">ajax.send();</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">ev=&gt;operation: EventTarget|past
 xe=&gt;operation: XMLHttpRequestEventTarget
 xr=&gt;operation: XMLHttpRequest
@@ -3433,6 +3637,7 @@ xr(right)-&gt;xe(right)-&gt;ev</textarea><textarea id="flowchart-0-options" styl
   
 
   
+
 
 
 

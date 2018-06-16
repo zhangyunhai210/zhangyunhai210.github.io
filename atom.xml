@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-14T13:43:51.763Z</updated>
+  <updated>2018-06-16T10:39:29.351Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2018-06-13-AJAX/"/>
     <id>http://yoursite.com/2018-06-13-AJAX/</id>
     <published>2018-06-13T22:32:57.000Z</published>
-    <updated>2018-06-14T13:43:51.763Z</updated>
+    <updated>2018-06-16T10:39:29.351Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;a href=&quot;#AJAX和XMLHttpRequest&quot; class=&quot;headerlink&quot; title=&quot;AJAX和XMLHttpRequest&quot;&gt;&lt;/a&gt;&lt;strong&gt;AJAX和XMLHttpRequest&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;&lt;br&gt;
+&lt;p&gt;ajax是一项伟大的技术，其很好的解决了传统浏览器一言不合就重新发送整个页面，速度慢，用户体验差的问题。它是一个获取资源的手段，可以在不进行整体刷新的情况下进行局部dom修改，速度快，用户体验好。实现的原理主要是基于一个类，&lt;code&gt;XMLHttpRequest&lt;/code&gt;
     
     </summary>
     
