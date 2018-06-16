@@ -222,7 +222,7 @@ ___
 
 <p style="color:red">注意: 在一个已经激活的request下（已经调用open()或者openRequest()方法的request）再次调用这个方法相当于调用了abort（）方法。</p>
 
-```
+```javascript
 void open(
    DOMString method,
    DOMString url,
