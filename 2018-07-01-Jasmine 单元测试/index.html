@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/congyu.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web,http,js,测试,前端测试,Jasmine," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钓鱼小屋" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Suites and Specs describe 函数包含两个参数  string name 一个测试套件的名称 function fn 实现测试套件的代码块  it 函数定义两个参数  string name spec的标题 function fn spec的函数 expect 函数 接收一个 value, 返回一个链式匹配对象 拥有以下匹配规则函数  toBe // 引用全等  toEqua">
+<meta name="keywords" content="web,http,js,测试,前端测试,Jasmine">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单元测试">
+<meta property="og:url" content="http://yoursite.com/2018-07-01-Jasmine 单元测试/index.html">
+<meta property="og:site_name" content="钓鱼小屋">
+<meta property="og:description" content="Suites and Specs describe 函数包含两个参数  string name 一个测试套件的名称 function fn 实现测试套件的代码块  it 函数定义两个参数  string name spec的标题 function fn spec的函数 expect 函数 接收一个 value, 返回一个链式匹配对象 拥有以下匹配规则函数  toBe // 引用全等  toEqua">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-02T13:56:28.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单元测试">
+<meta name="twitter:description" content="Suites and Specs describe 函数包含两个参数  string name 一个测试套件的名称 function fn 实现测试套件的代码块  it 函数定义两个参数  string name spec的标题 function fn spec的函数 expect 函数 接收一个 value, 返回一个链式匹配对象 拥有以下匹配规则函数  toBe // 引用全等  toEqua">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018-07-01-Jasmine 单元测试/"/>
+
+
+
+
+
+  <title>单元测试 | 钓鱼小屋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钓鱼小屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个萌豚的自我修养</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018-07-01-Jasmine 单元测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钓鱼小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">单元测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-02T06:54:16+08:00">
+                2018-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-07-01-Jasmine 单元测试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018-07-01-Jasmine 单元测试/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Suites-and-Specs"><a href="#Suites-and-Specs" class="headerlink" title="Suites and Specs"></a><strong>Suites and Specs</strong></h1><hr>
+<p><code>describe</code> 函数包含两个参数</p>
+<ul>
+<li><code>string</code> name 一个测试套件的名称</li>
+<li><code>function</code> fn 实现测试套件的代码块</li>
+</ul>
+<p><code>it</code> 函数定义两个参数</p>
+<ul>
+<li><code>string</code> name spec的标题</li>
+<li><p><code>function</code> fn spec的函数
+<code>expect</code> 函数 接收一个 <code>value</code>, 返回一个链式匹配对象
+拥有以下匹配规则函数</p>
+</li>
+<li><p><code>toBe</code> // 引用全等</p>
+</li>
+<li><code>toEqual</code> // 深度遍历，值全等</li>
+<li><code>toMatch</code> // 正则匹配， 支持字符串和正则表达式</li>
+<li><code>toContain</code> (字符串， 数组)</li>
+<li><code>toBeNull</code> // === null</li>
+<li><code>toBeTruthy</code> // Boolean(expect) === true</li>
+<li><code>toBeLessThan</code> // expect &lt; value</li>
+<li><code>toBeDefined</code> // expect !== undefined</li>
+<li><code>toBeUndefined</code> // expect === undefined</li>
+<li><code>toBeFalsy</code> // Boolean(expect) === false</li>
+<li><code>toBeGreaterThan</code> // expect &gt; value</li>
+<li><code>toBeCloseTo</code> // value - precision &lt;= expect &lt; value + precision</li>
+<li><code>toThrow</code> // expect throw ‘xx’</li>
+<li><code>toThrowError</code> expect throw type or match error message</li>
+</ul>
+<p><code>fail</code> 函数, 直接指定spec的错误原因
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"A spec using the fail function"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params">x, callBack</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x) &#123;</span><br><span class="line">      callBack();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  it(<span class="string">"should not call the callBack"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo(<span class="literal">false</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      fail(<span class="string">"Callback has been called"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>一个suite 可以有多个 <code>describe</code>, 一个 <code>describe</code> 可以有多个 <code>it</code>, 一个<code>it</code> 可以有多个 <code>expect</code></strong></p>
+<p>任何匹配表达式都可以有<code>not</code>前缀对象， 表示与期待的相反. 如
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'a suite'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    it(<span class="string">'should not equal false if expect is true'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        expect(<span class="literal">true</span>).not.toBe(<span class="literal">false</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="Setup-and-Teardown"><a href="#Setup-and-Teardown" class="headerlink" title="Setup and Teardown"></a><strong>Setup and Teardown</strong></h1><hr>
+<p>在一个<code>describe</code>中, 单元测试中的的 多个<code>it</code>， 有共同的需要初始化的情况。集中初始化和卸载</p>
+<ul>
+<li><code>beforeEach</code> (<code>describe</code> 执行后，<code>it</code> 执行前调用)</li>
+<li><code>afterEach</code> (每一个 <code>it</code> 执行后调用)</li>
+<li><code>beforeAll</code> (<code>describe</code> 执行后，<code>it</code> 执行前调用，只调用一次)</li>
+<li><code>afterAll</code> (所有 <code>it</code> 执行完成后调用)</li>
+</ul>
+<h1 id="this"><a href="#this" class="headerlink" title="this"></a><strong>this</strong></h1><hr>
+<p>在 <code>beforeEach</code>, <code>it</code>, <code>afterEach</code>, 共享独立的空 <code>this</code> 对象</p>
+<h1 id="嵌套-describe-块"><a href="#嵌套-describe-块" class="headerlink" title="嵌套 describe 块"></a><strong>嵌套 <code>describe</code> 块</strong></h1><hr>
+<p><code>beforeEach</code>, <code>afterEach</code> 只针对同级 <code>describe</code> 函数作用域
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"A spec"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> foo;</span><br><span class="line"></span><br><span class="line">  beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo = <span class="number">0</span>;</span><br><span class="line">    foo += <span class="number">1</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo = <span class="number">0</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">"is just a function, so it can contain any code"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(foo).toEqual(<span class="number">1</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">"can have more than one expectation"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(foo).toEqual(<span class="number">1</span>);</span><br><span class="line">    expect(<span class="literal">true</span>).toEqual(<span class="literal">true</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  describe(<span class="string">"nested inside a second describe"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bar;</span><br><span class="line"></span><br><span class="line">    beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      bar = <span class="number">1</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(<span class="string">"can reference both scopes as needed"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      expect(foo).toEqual(bar);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="Disabling-Suites"><a href="#Disabling-Suites" class="headerlink" title="Disabling Suites"></a><strong>Disabling Suites</strong></h1><hr>
+<p>使用 <code>xdescribe</code> 函数 可以跳过当前的测试套件</p>
+<h1 id="Pending-Specs"><a href="#Pending-Specs" class="headerlink" title="Pending Specs"></a><strong>Pending Specs</strong></h1><hr>
+<p>使用 <code>xit</code> 表示 该行为测试待规范，跳过测试</p>
+<h1 id="Spies"><a href="#Spies" class="headerlink" title="Spies"></a><strong>Spies</strong></h1><hr>
+<p><code>spyOn</code> 函数具有监控对象的函数是否调用的功能, spy 化的对象函数, 允许有以下的匹配函数</p>
+<ul>
+<li><code>toHaveBeenCalled</code> // 匹配是否调用</li>
+<li><code>toHaveBeenCalledTimes</code> // 匹配调用次数</li>
+<li><code>toHaveBeenCalledWith</code> // 匹配被调用的函数参数是否与预订的一致</li>
+</ul>
+<p>spy化后的函数，可以指定执行的返回值
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  setBar: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    bar = value;</span><br><span class="line">  &#125;,</span><br><span class="line">  getBar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">spyOn(foo, <span class="string">"getBar"</span>).and.returnValue(<span class="number">745</span>);</span><br><span class="line">fetchedBar = foo.getBar(); <span class="comment">// fetchBar is 745</span></span><br></pre></td></tr></table></figure></p>
+<p>spy化的函数</p>
+<ul>
+<li><code>and.returnValue</code> (返回值)</li>
+<li><code>and.throwError</code> (抛出异常)</li>
+<li><code>and.callThrough</code> (直接返回调用结果)</li>
+<li><code>and.returnValues</code> (返回一个数组)</li>
+<li><code>and.callFake</code> (通过回调篡改返回值)</li>
+<li><code>and.stub</code> (冻结spy化的函数执行)</li>
+<li><code>and.identity</code> (返回一个name)</li>
+</ul>
+<p>spy其它跟踪属性</p>
+<ul>
+<li><code>calls.any()</code> (return true表示被调用过, return false 表示从未调用过)</li>
+<li><code>calls.count()</code> (返回调用的次数)</li>
+<li><code>calls.argsFor(index)</code> （数组的形式返回某一次调用的入参）</li>
+<li><code>calls.allArgs()</code> (二维数组的形式返回所有调用的入参)</li>
+<li><code>calls.all()</code> (返回一个或多个{object: xx, args: [], returnValue: xx}的对象，多个由数组表示)</li>
+<li><code>calls.mostRecent()</code> (返回最近的一个调用上下文对象)</li>
+<li><code>calls.first()</code> (返回第一次调用的上下文对象)</li>
+<li><code>calls.reset()</code> (清空跟踪数据)</li>
+</ul>
+<h2 id="createSpy-与-createSpyObj"><a href="#createSpy-与-createSpyObj" class="headerlink" title="createSpy 与 createSpyObj"></a>createSpy 与 createSpyObj</h2><p><code>spyOn</code> 是基于操作对象的函数调用进行<code>tracking</code>， 而<code>jasmine.createSpy</code>则是创建一个空的<code>tracking</code>函数， <code>jasmine.createSpyObj</code> 可以为创建一个对象，拥有多个<code>tracking</code>的函数</p>
+<h2 id="封装匹配-value-的函数"><a href="#封装匹配-value-的函数" class="headerlink" title="封装匹配 value 的函数"></a>封装匹配 <code>value</code> 的函数</h2><ul>
+<li><code>jasmine.any</code> (匹配相同class)</li>
+<li><code>jasmine.anything</code> (匹配 非 null, undefined 的所有值)</li>
+<li><code>jasmine.objectContaining</code> (匹配对象局部的key, value)</li>
+<li><code>jasmine.arrayContaining</code> (匹配数组的某些项)</li>
+<li><code>jasmine.stringMatching</code> (匹配局部字符串)</li>
+</ul>
+<h2 id="Custom-asymmetric-equality-tester"><a href="#Custom-asymmetric-equality-tester" class="headerlink" title="Custom asymmetric equality tester"></a>Custom asymmetric equality tester</h2><p>自定义匹配规则, 传入一个对象, 对象中的 <code>asymmetricMatch</code> 是一个函数,其中入参表示姚培培的<code>value</code></p>
+<h2 id="Jasmine-Clock"><a href="#Jasmine-Clock" class="headerlink" title="Jasmine Clock"></a>Jasmine Clock</h2><p><code>jasmine.clock().install</code> 时间记录启动, <code>jasmine.clock().tick(millsecond)</code> 多少毫秒后，调用后续的<code>expect</code></p>
+<h2 id="Mocking-the-Date"><a href="#Mocking-the-Date" class="headerlink" title="Mocking the Date"></a>Mocking the Date</h2><p>Clock也可以用来当做时钟模拟当前日期
+如果没有使用<code>mockDate</code>来指定基准时间,它将使用默认当前时间
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"Mocking the Date object"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  it(<span class="string">"mocks the Date object and sets it to a given time"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> baseTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2013</span>, <span class="number">9</span>, <span class="number">23</span>);</span><br><span class="line"></span><br><span class="line">    jasmine.clock().mockDate(baseTime);</span><br><span class="line"></span><br><span class="line">    jasmine.clock().tick(<span class="number">50</span>);</span><br><span class="line">    expect(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()).toEqual(baseTime.getTime() + <span class="number">50</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="异步支持-Asynchronous-Support"><a href="#异步支持-Asynchronous-Support" class="headerlink" title="异步支持 Asynchronous Support"></a>异步支持 Asynchronous Support</h2><p><code>beforeAll</code> <code>afterAll</code> <code>beforeEach</code> <code>afterEach</code> <code>it</code> 支持函数第一个参数 <code>done</code> 进行回调
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"A spec using done.fail"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params">x, callBack1, callBack2</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (x) &#123;</span><br><span class="line">        setTimeout(callBack1, <span class="number">0</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        setTimeout(callBack2, <span class="number">0</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    it(<span class="string">"should not call the second callBack"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">      foo(<span class="literal">true</span>,</span><br><span class="line">        done,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          done.fail(<span class="string">"Second callback has been called"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>done.fail</code> 返回错误的执行</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+            <a href="/tags/前端测试/" rel="tag"># 前端测试</a>
+          
+            <a href="/tags/Jasmine/" rel="tag"># Jasmine</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-06-13-AJAX/" rel="next" title="AJAX">
+                <i class="fa fa-chevron-left"></i> AJAX
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhang</p>
+              <p class="site-description motion-element" itemprop="description">乱七八糟的一切事物</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangyunhai210" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zhangyunhai210@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/black_codemove" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/1934210383" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1098345874" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Suites-and-Specs"><span class="nav-number">1.</span> <span class="nav-text">Suites and Specs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setup-and-Teardown"><span class="nav-number">2.</span> <span class="nav-text">Setup and Teardown</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">3.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套-describe-块"><span class="nav-number">4.</span> <span class="nav-text">嵌套 describe 块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Disabling-Suites"><span class="nav-number">5.</span> <span class="nav-text">Disabling Suites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pending-Specs"><span class="nav-number">6.</span> <span class="nav-text">Pending Specs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spies"><span class="nav-number">7.</span> <span class="nav-text">Spies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#createSpy-与-createSpyObj"><span class="nav-number">7.1.</span> <span class="nav-text">createSpy 与 createSpyObj</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装匹配-value-的函数"><span class="nav-number">7.2.</span> <span class="nav-text">封装匹配 value 的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-asymmetric-equality-tester"><span class="nav-number">7.3.</span> <span class="nav-text">Custom asymmetric equality tester</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jasmine-Clock"><span class="nav-number">7.4.</span> <span class="nav-text">Jasmine Clock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mocking-the-Date"><span class="nav-number">7.5.</span> <span class="nav-text">Mocking the Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步支持-Asynchronous-Support"><span class="nav-number">7.6.</span> <span class="nav-text">异步支持 Asynchronous Support</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://zhangyunhai210.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018-07-01-Jasmine 单元测试/';
+          this.page.identifier = '2018-07-01-Jasmine 单元测试/';
+          this.page.title = '单元测试';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangyunhai210.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
