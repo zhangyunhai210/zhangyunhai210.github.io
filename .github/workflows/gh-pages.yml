@@ -46,6 +46,18 @@ jobs:
           node scripts/patch-pages-config.mjs
           npx hexo generate
 
+      # 避免上传空站点：若 public/index.html 异常为空，线上会表现为「空白页」
+      - name: 校验 Hexo 输出非空
+        working-directory: blog
+        run: |
+          test -f public/index.html || (echo "缺少 public/index.html" && exit 1)
+          SIZE=$(wc -c < public/index.html | tr -d ' ')
+          if [ "$SIZE" -lt 200 ]; then
+            echo "public/index.html 过小 (${SIZE} bytes)，部署后可能为空白页"
+            exit 1
+          fi
+          echo "public/index.html 大小 OK: ${SIZE} bytes"
+
       - name: 上传构建产物（仅 master/main）
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3

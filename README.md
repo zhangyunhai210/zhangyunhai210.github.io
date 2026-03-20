@@ -24,3 +24,11 @@ cd blog && npm ci && npx hexo server
 1. **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions**（不要选「Deploy from a branch」的 Jekyll 流程）。
 2. 删除仓库里**仅**用于 Jekyll 的 workflow（例如 `pages-build-deployment`），只保留本仓库的 **Hexo** 工作流（`.github/workflows/gh-pages.yml`）。
 3. 根目录已提供 **`_config.yml`**（`exclude: blog`），若仍误跑 Jekyll，可减轻与 Hexo 源码冲突。
+
+### 若访问站点为「空白页」
+
+线上曾出现 **HTTP 200 但 HTML 体积为 0**，浏览器即白屏。常见原因：
+
+1. **Pages 仍使用「从分支部署」且发布仓库根目录 `/(root)`**：根目录若存在 **空的 `index.html`**，或未包含 Hexo **构建产物**（应在 `blog/public`，由 CI 生成），都会白屏。
+2. **正确做法**：**Settings → Pages → Source** 选 **「GitHub Actions」**，由工作流上传 **`blog/public`** 的构建结果；合并/推送 **master** 后等待 **Deploy blog to GitHub Pages** 成功。
+3. 工作流已增加对 `blog/public/index.html` 非空的校验，避免误传空站点。
