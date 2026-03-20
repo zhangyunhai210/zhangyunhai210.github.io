@@ -23,8 +23,8 @@ npx hexo server
 2. **使用本仓库脚本**（直接写入 `source/_posts/*.md`，可带标签与分类）：
 
    ```bash
-   node scripts/save-post.mjs "文章标题" --tags web,前端
-   echo "正文内容" | node scripts/save-post.mjs "另一篇"
+   node tools/save-post.mjs "文章标题" --tags web,前端
+   echo "正文内容" | node tools/save-post.mjs "另一篇"
    ```
 
    若文件已存在，脚本会拒绝覆盖，避免误删。
@@ -34,6 +34,8 @@ npx hexo server
 ```bash
 npm run build
 ```
+
+`npm ci` / `npm install` 后会通过 **patch-package** 自动应用 `patches/hexo+3.9.0.patch`：修复 Hexo 3 在 **Node 16+** 下使用旧版 `pipeStream` 生成 **0 字节 HTML/CSS** 的问题（与 `RouteStream` 的 `objectMode` 管道不兼容）。请勿删除 `patches/` 目录。
 
 ## 测试与覆盖率
 

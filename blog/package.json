@@ -2,7 +2,6 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "hexo": {
     "version": "3.9.0"
   },
@@ -10,8 +9,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "server": "hexo server",
-    "post:new": "node scripts/save-post.mjs",
-    "pages:patch": "node scripts/patch-pages-config.mjs",
+    "post:new": "node tools/save-post.mjs",
+    "pages:patch": "node tools/patch-pages-config.mjs",
+    "postinstall": "patch-package",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
@@ -28,11 +28,11 @@
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0",
-    "hexo-service-worker": "^1.0.1"
+    "hexo-server": "^0.2.0"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^2.1.9",
+    "patch-package": "^8.0.1",
     "vitest": "^2.1.9"
   }
 }
