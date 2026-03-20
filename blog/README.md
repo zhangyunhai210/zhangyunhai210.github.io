@@ -51,7 +51,7 @@ npm run test:coverage
 
 若你希望**从功能分支直接部署**，请到 **Settings → Environments → `github-pages` → Deployment branches**，改为允许对应分支或所有分支。
 
-使用前请在仓库 **Settings → Pages** 中将 **Source** 设为 **GitHub Actions**。
+使用前请在仓库 **Settings → Pages** 中将 **Source** 设为 **GitHub Actions**（不要选「从分支部署」发布根目录，否则可能指向空的 `index.html` 导致白屏）。
 
 ## 说明
 
