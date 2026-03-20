@@ -1,4 +1,6 @@
 # 使用 Hexo 构建 blog/ 并发布到 GitHub Pages（artifact + deploy-pages）
+# 说明：GitHub Environments 里若将 Pages 部署限制为仅 master，则 deploy 只能在 master/main 上执行；
+# 其他分支仍会执行构建与测试，但不会上传 artifact、不触发 deploy。
 name: Deploy blog to GitHub Pages
 
 on:
@@ -29,7 +31,9 @@ jobs:
           cache: npm
           cache-dependency-path: blog/package-lock.json
 
+      # 仅在需要发布到 Pages 的分支上配置（与下方 artifact 条件一致）
       - name: 配置 Pages
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v4
 
       - name: 安装依赖、测试与生成站点
@@ -42,12 +46,15 @@ jobs:
           node scripts/patch-pages-config.mjs
           npx hexo generate
 
-      - name: 上传构建产物
+      - name: 上传构建产物（仅 master/main）
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: blog/public
 
   deploy:
+    # 与仓库 Settings → Environments → github-pages 中「Deployment branches」一致，避免 400 错误
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
