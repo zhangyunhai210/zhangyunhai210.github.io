@@ -1,0 +1,10 @@
+# 当 GitHub Pages 使用「默认」Jekyll 构建（或 actions/jekyll-build-pages）时，会扫描仓库根目录。
+# blog/ 为 Hexo 工程，其中 scaffolds 使用 {{ title }}、{{ date }} 占位符，与 Jekyll/Liquid 冲突，
+# 会引发 “Invalid Date: '{}' is not a valid datetime” 等错误。
+#
+# 推荐做法：仓库 Settings → Pages → Build and deployment → Source 选择「GitHub Actions」，
+# 仅使用本仓库的 Hexo 工作流（.github/workflows/gh-pages.yml）发布，不启用 Jekyll 构建。
+#
+# 若仍需保留 Jekyll 构建，以下 exclude 可避免处理 Hexo 源码目录。
+exclude:
+  - blog
