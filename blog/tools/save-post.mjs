@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * 在 source/_posts 下创建并保存一篇 Markdown 文章（可与 hexo new 配合使用）
- * 用法: node scripts/save-post.mjs "文章标题" [--tags a,b,c] [--cat 分类]
+ * 用法: node tools/save-post.mjs "文章标题" [--tags a,b,c] [--cat 分类]
  * 正文从 stdin 传入，或使用 --content "..."；若都为空则写入占位段落。
  */
 
@@ -53,7 +53,7 @@ async function readStdin() {
 async function main() {
   const { title, tags, categories, content: contentArg } = parseArgs(process.argv);
   if (!title) {
-    console.error('用法: node scripts/save-post.mjs "文章标题" [--tags a,b] [--cat 分类] [--content "正文"]');
+    console.error('用法: node tools/save-post.mjs "文章标题" [--tags a,b] [--cat 分类] [--content "正文"]');
     process.exit(1);
   }
 

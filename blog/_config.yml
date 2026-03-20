@@ -101,13 +101,7 @@ flowchart:
   # flowchart: # optional, the source url of flowchart.js
   options: # options used for `drawSVG`
 
-# offline config passed to sw-precache.
-service_worker:
-  maximumFileSizeToCacheInBytes: 5242880
-  staticFileGlobs:
-  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
-  stripPrefix: public
-  verbose: true
+# hexo-service-worker 已移除：旧版 sw-precache 在部分环境下会把 HTML 当作 0 B 处理，导致首页空白
 #
 marked:
   gfm: true

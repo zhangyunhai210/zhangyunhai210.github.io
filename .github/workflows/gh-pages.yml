@@ -43,7 +43,7 @@ jobs:
         run: |
           npm ci
           npm test
-          node scripts/patch-pages-config.mjs
+          node tools/patch-pages-config.mjs
           npx hexo generate
 
       # 避免上传空站点：若 public/index.html 异常为空，线上会表现为「空白页」
